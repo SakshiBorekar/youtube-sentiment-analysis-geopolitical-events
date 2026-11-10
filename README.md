@@ -1,2 +1,43 @@
-# youtube-sentiment-analysis-geopolitical-events
-Event-driven sentiment and toxicity analysis of YouTube comments towards Indian content creators around major geopolitical events (Python, VADER)
+# Event-Driven Sentiment Analysis of Indian Audiences Towards Muslim Content Creators
+
+A course project on how sentiment and toxicity in YouTube comments change around major geopolitical events in India (Python, VADER).
+
+**Team (proposal):** Sakshi Borekar, Nishi, Diya, Manish. **Poster:** Sakshi Borekar.
+
+**My role:** I wrote the code for the analysis: collecting comments through the YouTube API, cleaning and structuring the data, VADER sentiment scoring, and the rule-based toxicity and theme classification. The final notebook is not included in this repository yet. For now it holds the proposal and the poster.
+
+## Research question
+How do Indian audiences' sentiments towards Muslim content creators change over time following major geopolitical events?
+
+## Hypothesis
+Major geopolitical events lead to a measurable increase in negative sentiment towards Muslim content creators in the post-event period compared to the pre-event period.
+
+## Data
+- YouTube comments and replies from 13 creators (7 Muslim, 6 Hindu) who post non-political content, selected as a randomised sample
+- Videos from March to June 2025, collected with the YouTube Data API (google-api-python-client)
+- About 150 comments per creator: roughly 700 for Muslim creators and 600 for Hindu creators
+- Raw comments are not included in this repository, to protect commenters' privacy
+
+## Methods
+1. Collection, then cleaning (noise removal, timestamp standardisation), then classification, then pre/post-event comparison
+2. Sentiment: VADER (a lexicon-based method)
+3. Toxicity and themes (nationalism, religion, politics): rule-based
+4. Tools: Python, Pandas, Google Colab
+
+## Key findings
+- Sentiment and toxicity spiked around the Pahalgam attack and Operation Sindoor for both creator groups.
+- Comments under Muslim creators showed higher short-term volatility; comments under Hindu creators showed a more sustained decline in sentiment.
+- Falling sentiment lined up with rising toxicity. Neither measure returned to its March level in the period studied.
+- Volatility was sharper in comments about nationalism, religion and politics.
+
+## Limitations
+- YouTube comments only, and a limited set of creators, so the results may not represent the wider audience.
+- VADER and rule-based methods can miss sarcasm and mixed-language text.
+- The analysis shows trends, not causal relationships.
+
+## Future work
+More platforms and creators, a longer time period, better multilingual models and better handling of sarcasm.
+
+## Files
+- `docs/Poster-YouTube-sentiment-analysis.pdf`: the project poster, which reports the completed analysis
+- `docs/Proposal-YouTube-sentiment-analysis.pdf`: the original proposal, which describes a wider plan (several platforms, 10,000 to 50,000 comments) than the one completed
